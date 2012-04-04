@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.003';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.004';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -413,9 +413,11 @@ It is roughly equivalent to:
   [Git::CheckFor::CorrectBranch]
   release_branch = master
 
-  [StaticVersion]          # if      static_version
-  [Git::CheckFor::Fixups]  # unless  static_version
-  [Git::NextVersion]       # unless  static_version
+  # if static_version
+    [StaticVersion]
+  # else
+    [Git::CheckFor::Fixups]
+    [Git::NextVersion]
 
   [@Git]
 

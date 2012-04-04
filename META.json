@@ -68,7 +68,7 @@
          "web" : "http://github.com/renormalist/Dist-Zilla-PluginBundle-SCHWIGON"
       }
    },
-   "version" : "0.004",
+   "version" : "0.005",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -207,9 +207,9 @@
             "version" : "0.001"
          },
          {
-            "class" : "Dist::Zilla::Plugin::StaticVersion",
-            "name" : "@SCHWIGON/StaticVersion",
-            "version" : "0.103521"
+            "class" : "Dist::Zilla::Plugin::Git::NextVersion",
+            "name" : "@SCHWIGON/Git::NextVersion",
+            "version" : "1.120860"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",

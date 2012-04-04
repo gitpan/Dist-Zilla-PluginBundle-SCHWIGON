@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-SCHWIGON
 
+0.005     2012-04-04 12:51:00 Europe/Berlin
+        - configurable release branch
+        - no more CheckFor::Fixup as this doesn't know other tag
+          formats
+
 0.004     2012-04-04 11:46:12 Europe/Berlin
         - Changes file
 

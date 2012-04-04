@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.004';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.005';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -66,6 +66,12 @@ has static_version => (
     is        => 'ro',
     isa       => Str,
     predicate => 'has_static_version',
+);
+
+has release_branch => (
+    is        => 'ro',
+    isa       => Str,
+    predicate => 'has_release_branch',
 );
 
 has disable_pod_coverage_tests => (
@@ -338,12 +344,15 @@ method configure {
 
     $self->add_plugins('NextRelease');
 
-    $self->add_plugins(['Git::CheckFor::CorrectBranch' => { release_branch => 'master' }]);
+    $self->add_plugins(['Git::CheckFor::CorrectBranch' =>
+                        { release_branch => ($self->has_release_branch
+                                             ? $self->release_branch
+                                             : 'master')
+                        }]);
 
     if ($self->has_static_version) {
             $self->add_plugins(['StaticVersion' => { version => $self->static_version }]);
     } else {
-            $self->add_plugins('Git::CheckFor::Fixups');
             $self->add_plugins('Git::NextVersion');
     }
 
@@ -373,6 +382,7 @@ In dist.ini:
   dist = Distribution-Name
   repository_at = github
   ; static_version = 7.89
+  ; release_branch = public-releases
 
 =head1 DESCRIPTION
 
@@ -416,7 +426,6 @@ It is roughly equivalent to:
   # if static_version
     [StaticVersion]
   # else
-    [Git::CheckFor::Fixups]
     [Git::NextVersion]
 
   [@Git]

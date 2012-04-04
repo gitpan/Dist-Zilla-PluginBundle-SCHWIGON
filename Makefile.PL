@@ -34,6 +34,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::MetaResources" => 3,
     "Dist::Zilla::Plugin::NoTabsTests" => 0,
     "Dist::Zilla::Plugin::PodWeaver" => 0,
+    "Dist::Zilla::Plugin::StaticVersion" => 0,
     "Dist::Zilla::Plugin::TaskWeaver" => 0,
     "Dist::Zilla::PluginBundle::Classic" => 0,
     "Dist::Zilla::PluginBundle::Filter" => 0,
@@ -48,7 +49,7 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::PluginBundle::SCHWIGON" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

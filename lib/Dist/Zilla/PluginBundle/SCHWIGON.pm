@@ -3,11 +3,11 @@ BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.001';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.003';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
-# (well actuall like FLORA - as it is shamelessly stolen)
+# (well actually like FLORA - as it is shamelessly stolen)
 
 use Moose 1.00;
 use Method::Signatures::Simple;
@@ -60,6 +60,12 @@ has weaver_config_plugin => (
     is      => 'ro',
     isa     => Str,
     default => '@SCHWIGON',
+);
+
+has static_version => (
+    is        => 'ro',
+    isa       => Str,
+    predicate => 'has_static_version',
 );
 
 has disable_pod_coverage_tests => (
@@ -318,7 +324,6 @@ method configure {
         }],
     );
 
-
     $self->is_task
         ? $self->add_plugins('TaskWeaver')
         : $self->add_plugins(
@@ -328,6 +333,21 @@ method configure {
           );
 
     $self->add_plugins('AutoPrereqs') if $self->auto_prereqs;
+
+    # roughly from here we diverge from FLORA
+
+    $self->add_plugins('NextRelease');
+
+    $self->add_plugins(['Git::CheckFor::CorrectBranch' => { release_branch => 'master' }]);
+
+    if ($self->has_static_version) {
+            $self->add_plugins(['StaticVersion' => { version => $self->static_version }]);
+    } else {
+            $self->add_plugins('Git::CheckFor::Fixups');
+            $self->add_plugins('Git::NextVersion');
+    }
+
+    $self->add_bundle('@Git');
 }
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -352,6 +372,7 @@ In dist.ini:
   [@SCHWIGON]
   dist = Distribution-Name
   repository_at = github
+  ; static_version = 7.89
 
 =head1 DESCRIPTION
 
@@ -386,6 +407,17 @@ It is roughly equivalent to:
   config_plugin = @SCHWIGON
 
   [AutoPrereqs]
+
+  [NextRelease]
+
+  [Git::CheckFor::CorrectBranch]
+  release_branch = master
+
+  [StaticVersion]          # if      static_version
+  [Git::CheckFor::Fixups]  # unless  static_version
+  [Git::NextVersion]       # unless  static_version
+
+  [@Git]
 
 =head1 AUTHOR
 

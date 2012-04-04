@@ -26,6 +26,7 @@ requires:
   Dist::Zilla::Plugin::MetaResources: 3
   Dist::Zilla::Plugin::NoTabsTests: 0
   Dist::Zilla::Plugin::PodWeaver: 0
+  Dist::Zilla::Plugin::StaticVersion: 0
   Dist::Zilla::Plugin::TaskWeaver: 0
   Dist::Zilla::PluginBundle::Classic: 0
   Dist::Zilla::PluginBundle::Filter: 0
@@ -43,7 +44,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-SCHWIGON
   homepage: http://metacpan.org/release/Dist-Zilla-PluginBundle-SCHWIGON
   repository: git://github.com/renormalist/Dist-Zilla-PluginBundle-SCHWIGON.git
-version: 0.001
+version: 0.003
 x_Dist_Zilla:
   plugins:
     -
@@ -146,6 +147,34 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@SCHWIGON/AutoPrereqs'
       version: 4.300013
+    -
+      class: Dist::Zilla::Plugin::NextRelease
+      name: '@SCHWIGON/NextRelease'
+      version: 4.300013
+    -
+      class: Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch
+      name: '@SCHWIGON/Git::CheckFor::CorrectBranch'
+      version: 0.001
+    -
+      class: Dist::Zilla::Plugin::StaticVersion
+      name: '@SCHWIGON/StaticVersion'
+      version: 0.103521
+    -
+      class: Dist::Zilla::Plugin::Git::Check
+      name: '@SCHWIGON/@Git/Check'
+      version: 1.120860
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      name: '@SCHWIGON/@Git/Commit'
+      version: 1.120860
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: '@SCHWIGON/@Git/Tag'
+      version: 1.120860
+    -
+      class: Dist::Zilla::Plugin::Git::Push
+      name: '@SCHWIGON/@Git/Push'
+      version: 1.120860
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:

@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.005';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.006';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -342,7 +342,10 @@ method configure {
 
     # roughly from here we diverge from FLORA
 
-    $self->add_plugins('NextRelease');
+    $self->add_plugins('CheckChangesHasContent');
+
+    $self->add_plugins(['NextRelease' =>
+                       { format => '%-9v %{yyyy-MM-dd}d' }]);
 
     $self->add_plugins(['Git::CheckFor::CorrectBranch' =>
                         { release_branch => ($self->has_release_branch
@@ -419,6 +422,8 @@ It is roughly equivalent to:
   [AutoPrereqs]
 
   [NextRelease]
+
+  [CheckChangesHasContent]
 
   [Git::CheckFor::CorrectBranch]
   release_branch = master

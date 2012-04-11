@@ -23,6 +23,7 @@
          "requires" : {
             "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
+            "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::MetaConfig" : "0",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
@@ -68,7 +69,7 @@
          "web" : "http://github.com/renormalist/Dist-Zilla-PluginBundle-SCHWIGON"
       }
    },
-   "version" : "0.005",
+   "version" : "0.006",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -195,6 +196,11 @@
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
             "name" : "@SCHWIGON/AutoPrereqs",
             "version" : "4.300013"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CheckChangesHasContent",
+            "name" : "@SCHWIGON/CheckChangesHasContent",
+            "version" : "0.004"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",

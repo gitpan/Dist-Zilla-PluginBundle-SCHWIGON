@@ -28,6 +28,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
+    "Dist::Zilla::Plugin::CheckChangesHasContent" => 0,
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
     "Dist::Zilla::Plugin::MetaConfig" => 0,
     "Dist::Zilla::Plugin::MetaJSON" => 0,
@@ -49,7 +50,7 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::PluginBundle::SCHWIGON" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.005",
+  "VERSION" => "0.006",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.006';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.007';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -326,7 +326,7 @@ method configure {
             do_metadata => 1,
         }],
         [EOLTests => {
-            trailing_whitespace => !$self->disable_trailing_whitespace_tests,
+            trailing_whitespace => $self->disable_trailing_whitespace_tests ? 0 : 1,
         }],
     );
 

@@ -1,9 +1,11 @@
 package Dist::Zilla::PluginBundle::SCHWIGON;
+# git description: v0.007-1-gacc6233
+
 BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.007';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.008';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -342,6 +344,7 @@ method configure {
 
     # roughly from here we diverge from FLORA
 
+    $self->add_plugins('Git::Describe');
     $self->add_plugins('CheckChangesHasContent');
 
     $self->add_plugins(['NextRelease' =>
@@ -420,6 +423,7 @@ It is roughly equivalent to:
   config_plugin = @SCHWIGON
 
   [AutoPrereqs]
+  [Git::Describe]
 
   [NextRelease]
 

@@ -1,10 +1,13 @@
 Revision history for Dist-Zilla-PluginBundle-SCHWIGON
 
+0.008     2012-06-07
+        - add [Git::Describe]
+
 0.007     2012-06-03
-	- fix a 'Odd number of elements in anonymous hash' in eol tests
+        - fix a 'Odd number of elements in anonymous hash' in eol tests
 
 0.006     2012-04-11
-        - NextRelease.0.007     2012-06-03 more CPAN::Changes::Spec conform
+        - NextRelease.0.008     2012-06-07 more CPAN::Changes::Spec conform
         - add [CheckChangesHasContent]
 
 0.005     2012-04-04

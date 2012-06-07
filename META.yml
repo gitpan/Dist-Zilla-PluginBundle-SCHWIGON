@@ -45,7 +45,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-SCHWIGON
   homepage: http://metacpan.org/release/Dist-Zilla-PluginBundle-SCHWIGON
   repository: git://github.com/renormalist/Dist-Zilla-PluginBundle-SCHWIGON.git
-version: 0.007
+version: 0.008
 x_Dist_Zilla:
   plugins:
     -
@@ -148,6 +148,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@SCHWIGON/AutoPrereqs'
       version: 4.300016
+    -
+      class: Dist::Zilla::Plugin::Git::Describe
+      name: '@SCHWIGON/Git::Describe'
+      version: 0.001
     -
       class: Dist::Zilla::Plugin::CheckChangesHasContent
       name: '@SCHWIGON/CheckChangesHasContent'

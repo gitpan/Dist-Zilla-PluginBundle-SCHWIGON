@@ -30,6 +30,8 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CheckChangesHasContent" => 0,
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
+    "Dist::Zilla::Plugin::Git::Describe" => 0,
+    "Dist::Zilla::Plugin::Git::NextVersion" => 0,
     "Dist::Zilla::Plugin::MetaConfig" => 0,
     "Dist::Zilla::Plugin::MetaJSON" => 0,
     "Dist::Zilla::Plugin::MetaResources" => 3,
@@ -39,6 +41,8 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::TaskWeaver" => 0,
     "Dist::Zilla::PluginBundle::Classic" => 0,
     "Dist::Zilla::PluginBundle::Filter" => 0,
+    "Dist::Zilla::PluginBundle::Git" => 0,
+    "Dist::Zilla::PluginBundle::Git::CheckFor" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Method::Signatures::Simple" => 0,
     "Moose" => "1.00",
@@ -50,7 +54,7 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::PluginBundle::SCHWIGON" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.008",
+  "VERSION" => "0.009",
   "test" => {
     "TESTS" => "t/*.t"
   }

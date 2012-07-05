@@ -1,11 +1,11 @@
 package Dist::Zilla::PluginBundle::SCHWIGON;
-# git description: v0.008-1-g4d7dd01
+# git description: v0.009-1-g831ebae
 
 BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.009';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.010';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -83,6 +83,12 @@ has disable_pod_coverage_tests => (
 );
 
 has disable_trailing_whitespace_tests => (
+    is      => 'ro',
+    isa     => Bool,
+    default => 0,
+);
+
+has disable_tab_tests => (
     is      => 'ro',
     isa     => Bool,
     default => 0,
@@ -308,8 +314,10 @@ method configure {
         MetaJSON
         PkgVersion
         PodSyntaxTests
-        NoTabsTests
     ));
+
+    $self->add_plugins('NoTabsTests')
+        unless $self->disable_tab_tests;
 
     $self->add_plugins('PodCoverageTests')
         unless $self->disable_pod_coverage_tests;

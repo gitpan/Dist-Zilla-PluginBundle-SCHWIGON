@@ -73,7 +73,7 @@
          "web" : "http://github.com/renormalist/Dist-Zilla-PluginBundle-SCHWIGON"
       }
    },
-   "version" : "0.009",
+   "version" : "0.010",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

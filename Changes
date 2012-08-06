@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-SCHWIGON
 
+0.011     2012-08-06
+        - more deps declared
+
 0.010     2012-07-05
         - new option "disable_tab_tests"
 
@@ -13,7 +16,7 @@ Revision history for Dist-Zilla-PluginBundle-SCHWIGON
         - fix a 'Odd number of elements in anonymous hash' in eol tests
 
 0.006     2012-04-11
-        - NextRelease.0.010     2012-07-05 more CPAN::Changes::Spec conform
+        - NextRelease.0.011     2012-08-06 more CPAN::Changes::Spec conform
         - add [CheckChangesHasContent]
 
 0.005     2012-04-04

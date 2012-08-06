@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::PluginBundle::SCHWIGON",
   "PREREQ_PM" => {
+    "Dist::Zilla::Plugin::AssertOS" => 0,
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CheckChangesHasContent" => 0,
@@ -54,7 +55,7 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::PluginBundle::SCHWIGON" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.010",
+  "VERSION" => "0.011",
   "test" => {
     "TESTS" => "t/*.t"
   }

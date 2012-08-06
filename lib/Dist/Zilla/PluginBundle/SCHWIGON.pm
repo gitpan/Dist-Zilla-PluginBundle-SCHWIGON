@@ -1,11 +1,11 @@
 package Dist::Zilla::PluginBundle::SCHWIGON;
-# git description: v0.009-1-g831ebae
+# git description: v0.010-3-g495119c
 
 BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.010';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.011';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 

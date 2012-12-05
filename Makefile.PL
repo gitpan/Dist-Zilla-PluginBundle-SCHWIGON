@@ -52,10 +52,12 @@ my %WriteMakefileArgs = (
     "MooseX::Types::Moose" => 0,
     "MooseX::Types::Structured" => "0.20",
     "MooseX::Types::URI" => 0,
+    "Pod::Coverage::TrustPod" => 0,
     "Pod::Weaver::PluginBundle::SCHWIGON" => 0,
+    "Test::Pod::Coverage" => 0,
     "namespace::autoclean" => 0
   },
-  "VERSION" => "0.011",
+  "VERSION" => "0.012",
   "test" => {
     "TESTS" => "t/*.t"
   }

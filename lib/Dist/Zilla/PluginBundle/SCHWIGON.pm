@@ -1,11 +1,11 @@
 package Dist::Zilla::PluginBundle::SCHWIGON;
-# git description: v0.010-3-g495119c
+# git description: v0.011-1-g7b282a9
 
 BEGIN {
   $Dist::Zilla::PluginBundle::SCHWIGON::AUTHORITY = 'cpan:SCHWIGON';
 }
 {
-  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.011';
+  $Dist::Zilla::PluginBundle::SCHWIGON::VERSION = '0.012';
 }
 # ABSTRACT: Build your distributions like SCHWIGON does
 
@@ -380,6 +380,7 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -459,4 +460,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
